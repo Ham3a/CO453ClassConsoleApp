@@ -14,11 +14,16 @@ namespace CO453_ClassConsoleApp
 
             DistanceConverter converter = new DistanceConverter();
 
+            miles = converter.GetDouble("Miles");
             feet = converter.ToFeet(miles);
+
+            Console.WriteLine("The no of Miles = " + miles);
             Console.WriteLine("The no of feet = " + feet);
 
-            feet = 1760 * 3;
+            feet = converter.GetDouble("Feet");
             miles = converter.ToMiles(feet);
+
+            Console.WriteLine("The no of feet = " + feet);
             Console.WriteLine("The no of miles = " + miles);
         }
     }
