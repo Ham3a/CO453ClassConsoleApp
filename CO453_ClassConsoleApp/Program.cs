@@ -13,7 +13,10 @@ namespace CO453_ClassConsoleApp
 
         private static void TestBook()
         {
-            
+            Book book = new Book();
+
+            book.GetDetails();
+            book.WriteChapter1();
         }
 
         /// <summary>
