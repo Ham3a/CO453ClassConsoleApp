@@ -7,6 +7,20 @@ namespace CO453_ClassConsoleApp
     {
         static void Main(string[] args)
         {
+            //TestDistanceConverter();
+            TestBook();
+        }
+
+        private static void TestBook()
+        {
+            
+        }
+
+        /// <summary>
+        /// Task 4.1
+        /// </summary>
+        public static void TestDistanceConverter()
+        {
             double miles = 1;
             double feet = 0;
 
@@ -25,6 +39,7 @@ namespace CO453_ClassConsoleApp
 
             Console.WriteLine("The no of feet = " + feet);
             Console.WriteLine("The no of miles = " + miles);
+
         }
     }
 }
