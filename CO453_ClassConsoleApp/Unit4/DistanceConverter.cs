@@ -5,8 +5,7 @@ using System.Text;
 namespace CO453_ClassConsoleApp.Unit4
 {
     /// <summary>
-    /// This class will convert miles to 
-    /// whole feet, or feet to miles
+    /// This class will convert miles to feet, or feet to miles
     /// 
     /// Author: Derek Peacock
     /// </summary>
