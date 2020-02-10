@@ -29,8 +29,12 @@ namespace CO453_ClassConsoleApp.Unit5
 
         public void GetVotes()
         {
+            SimpleIO.WriteTitle("Vote for UK Top 10 Chart Singles", "Task 5.2");
+            Console.WriteLine("Enter 0 to quit");
+            Console.WriteLine();
 
-         }
+            songNo = SimpleIO.GetInt("Enter song no: ");
+        }
 
 
         public void ShowVotes()
