@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CO453_ClassConsoleApp.Unit5
 {
-    class MP3Chart
+    public class MP3Chart
     {
         public const int MAXN_SONGS = 5;
         private string[] chart;
@@ -33,7 +33,7 @@ namespace CO453_ClassConsoleApp.Unit5
             Console.WriteLine("Enter 0 to quit");
             Console.WriteLine();
 
-            songNo = SimpleIO.GetInt("Enter song no: ");
+            int songNo = SimpleIO.GetInt("Enter song no: ");
         }
 
 

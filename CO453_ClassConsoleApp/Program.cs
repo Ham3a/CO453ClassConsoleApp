@@ -1,4 +1,5 @@
 ﻿using CO453_ClassConsoleApp.Unit4;
+using CO453_ClassConsoleApp.Unit5;
 using System;
 
 namespace CO453_ClassConsoleApp
@@ -19,8 +20,8 @@ namespace CO453_ClassConsoleApp
         /// </summary>
         static void Main(string[] args)
         {
-            //TestDistanceConverter();
-            TestBook();
+            //TestDistanceConverter(); // T4.1
+            TestBook(); // T4.2 and T4.3
         }
 
         /// <summary>
@@ -60,6 +61,37 @@ namespace CO453_ClassConsoleApp
             Console.WriteLine("The no of feet = " + feet);
             Console.WriteLine("The no of miles = " + miles);
 
+        }
+
+        /// <summary>
+        /// A simple room booking system
+        /// </summary>
+        private static void TestMotelBooking()
+        {
+            BatesMotel motel = new BatesMotel();
+
+            SimpleIO.WriteTitle("The Bates Motel", "Task 5.6");
+
+            string[] choices =
+            {
+                "1. Book a Room",
+                "2. Vacate a Room",
+                "3. Display All Rooms",
+                "4. Vacate All Rooms",
+                "5. Quit"
+            };
+
+            int choice = SimpleIO.GetChoice(choices);
+
+            switch (choice)
+            {
+                case 1:
+                    motel.Book(1, 2);
+                    break;
+
+                default:
+                    break;
+            }
         }
     }
 }

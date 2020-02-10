@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CO453_ClassConsoleApp.Unit5
 {
-    class Tournament
+    public class Tournament
     {
         const int MAXN_SCORES = 6;
 
