@@ -8,7 +8,7 @@ namespace CO453_ClassConsoleApp
     /// This class will provide general methods to assist user
     /// input and output using the Console
     /// </summary>
-    class SimpleIO
+    static class SimpleIO
     {
         public const string AUTHOR = "Derek Peacock";
 
