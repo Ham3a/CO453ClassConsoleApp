@@ -4,6 +4,13 @@ using System.Text;
 
 namespace CO453_ClassConsoleApp.Unit5
 {
+    /// <summary>
+    /// Task 5.1 and Task 5.3
+    /// This class gets and displays an array of tournament scores for 
+    /// an array of players (names)
+    /// 
+    /// Derek Peacock
+    /// </summary>
     public class Tournament
     {
         const int MAXN_SCORES = 6;

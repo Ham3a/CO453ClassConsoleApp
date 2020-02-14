@@ -20,9 +20,70 @@ namespace CO453_ClassConsoleApp
         /// </summary>
         static void Main(string[] args)
         {
-            //TestDistanceConverter(); // T4.1
-            TestBook(); // T4.2 and T4.3
+            //TestDistanceConverter();    // T4.1
+            //TestBook();                 // T4.2 and T4.3
+            //TestTournament();           // T5.1 and 5.3
+            //TestSongs();                // T5.2
+            //TestMotelBooking();         // T5.6
         }
+
+        /// <summary>
+        /// Task 5.6
+        /// A simple room booking system
+        /// </summary>
+        private static void TestMotelBooking()
+        {
+            BatesMotel motel = new BatesMotel();
+
+            SimpleIO.WriteTitle("The Bates Motel", "Task 5.6");
+
+            string[] choices =
+            {
+                "1. Book a Room",
+                "2. Vacate a Room",
+                "3. Display All Rooms",
+                "4. Vacate All Rooms",
+                "5. Quit"
+            };
+
+            int choice = SimpleIO.GetChoice(choices);
+
+            switch (choice)
+            {
+                case 1:
+                    motel.Book(1, 2);
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+
+        /// <summary>
+        /// Task 5.2
+        /// </summary>
+        private static void TestSongs()
+        {
+            MP3Chart chart = new MP3Chart();
+
+            chart.ShowSongs();
+            chart.GetVotes();
+            chart.ShowVotes();
+        }
+
+        /// <summary>
+        /// Task 5.1
+        /// </summary>
+        private static void TestTournament()
+        {
+            Tournament tournament = new Tournament();
+
+            tournament.GetScores();
+
+            tournament.ShowScores();
+        }
+
 
         /// <summary>
         /// Task 4.2 Create a Book object and test that it writes chapter 1 and 2
@@ -65,35 +126,5 @@ namespace CO453_ClassConsoleApp
 
         }
 
-        /// <summary>
-        /// A simple room booking system
-        /// </summary>
-        private static void TestMotelBooking()
-        {
-            BatesMotel motel = new BatesMotel();
-
-            SimpleIO.WriteTitle("The Bates Motel", "Task 5.6");
-
-            string[] choices =
-            {
-                "1. Book a Room",
-                "2. Vacate a Room",
-                "3. Display All Rooms",
-                "4. Vacate All Rooms",
-                "5. Quit"
-            };
-
-            int choice = SimpleIO.GetChoice(choices);
-
-            switch (choice)
-            {
-                case 1:
-                    motel.Book(1, 2);
-                    break;
-
-                default:
-                    break;
-            }
-        }
     }
 }

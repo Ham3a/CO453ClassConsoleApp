@@ -4,6 +4,10 @@ using System.Text;
 
 namespace CO453_ClassConsoleApp.Unit5
 {
+    /// <summary>
+    /// Task 5.6 Independant Study
+    /// Derek Peacock
+    /// </summary>
     public class BatesMotel
     {
         public const int MAXN_ROOMS = 20;

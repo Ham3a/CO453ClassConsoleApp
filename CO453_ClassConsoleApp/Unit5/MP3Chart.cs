@@ -4,6 +4,12 @@ using System.Text;
 
 namespace CO453_ClassConsoleApp.Unit5
 {
+    /// <summary>
+    /// Task 5.2 Class Example
+    /// This class get votes for an array of song titles currently
+    /// in the top ten uk chart
+    /// Derek Peacock
+    /// </summary>
     public class MP3Chart
     {
         public const int MAXN_SONGS = 5;
