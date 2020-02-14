@@ -32,6 +32,8 @@ namespace CO453_ClassConsoleApp
         {
             Book book = new Book();
 
+            SimpleIO.WriteTitle("Horror Storey", "Task 4.1");
+
             book.GetDetails();
             book.WriteChapter1();
         }

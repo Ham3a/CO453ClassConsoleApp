@@ -17,6 +17,12 @@ namespace CO453_ClassConsoleApp.Unit4
         private string author, name, town;
         private string animal, weapon, job;
 
+        public Book()
+        {
+            author = SimpleIO.AUTHOR;
+            name = "Veena";
+        }
+
         /// <summary>
         /// Prompt the user for an answer as a string and return it
         /// </summary>
@@ -36,7 +42,6 @@ namespace CO453_ClassConsoleApp.Unit4
         /// </summary>
         public void GetDetails() // keep using ask() to get information
         {
-            author = GetString("Please type your name : ");
             name = GetString("Please type a friend's name : ");
             town = GetString("Now give me the name of a town : ");
             animal = GetString("Now a type of animal : ");
