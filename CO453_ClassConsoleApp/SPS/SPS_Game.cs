@@ -18,6 +18,7 @@ namespace CO453ClassConsoleApp.SPS
         public const string SCISSORS = "SCISSORS";
         public const string STONE = "STONE";
         public const string PAPER = "PAPER";
+        public const string UNKOWN = "UNKNOWN";
 
         public static string PlayerName { get; set; }
         public static string ComputerName { get; set; }
@@ -25,28 +26,10 @@ namespace CO453ClassConsoleApp.SPS
         public static string PlayerChoice { get; set; }
         public static string Winner { get; set; }
 
-        public static int PlayerScore { get; set; }
-        public static int ComputerScore { get; set; }
-
         private static Random randomGenerator = new Random();
 
-        //static void Main()
-        //{
-        //    Game myGame = new Game();  // create new Game object
-
-        //    myGame.Play();             // call its play method
-        //}
-
-        /// <summary>
-        /// *******************************************************
-        /// 
-        /// *******************************************************
-        /// </summary>
-        public static void Start()
+         public static void Start()
         {
-            PlayerScore = 0;
-            ComputerScore = 0;
-
             PlayerName = "Derek";
             ComputerName = "Computer";
         }
@@ -58,12 +41,7 @@ namespace CO453ClassConsoleApp.SPS
         /// </summary>
         public static void End()
         {
-            if (PlayerScore > ComputerScore)
-                Winner = PlayerName;
-            else if (PlayerScore < ComputerScore)
-                Winner = ComputerName;
-            else
-                Winner = "No Winner";
+             Winner = "No Winner";
         }
 
         /// <summary>
@@ -80,13 +58,9 @@ namespace CO453ClassConsoleApp.SPS
             {
                 ComputerChoice = SCISSORS;
             }
-            else if(choice == 1)
+            else 
             {
-                ComputerChoice = PAPER;
-            }
-            else if(choice == 2)
-            {
-                ComputerChoice = STONE;
+                ComputerChoice = UNKOWN;
             }
         }
 
@@ -100,22 +74,13 @@ namespace CO453ClassConsoleApp.SPS
         {
             if (PlayerChoice == ComputerChoice)
             {
-                Winner = "No Winner";
+                Winner = "You have Drawn!!!";
             }
-            else if ((PlayerChoice == STONE && ComputerChoice == PAPER) ||
-                    (PlayerChoice == SCISSORS && ComputerChoice == STONE) ||
-                    (PlayerChoice == PAPER && ComputerChoice == SCISSORS))
+            else
             {
-                Winner = ComputerName;
-                ComputerScore++;
+                Winner = "Not Yet Determined!!!";
             }
-            else if ((PlayerChoice == STONE && ComputerChoice == SCISSORS) ||
-                    (PlayerChoice == SCISSORS && ComputerChoice == PAPER) ||
-                    (PlayerChoice == PAPER && ComputerChoice == STONE))
-            {
-                Winner = PlayerName;
-                PlayerScore++;
-            }
+
         }
     }
 }

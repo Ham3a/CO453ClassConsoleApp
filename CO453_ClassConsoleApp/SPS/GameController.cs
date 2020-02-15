@@ -77,19 +77,21 @@ namespace CO453ClassConsoleApp.SPS
         }
 
         /// <summary>
-        /// *******************************************************
-        /// 
-        /// *******************************************************
+        /// This method draws out an image of the choice for
+        /// either the computer, or the player.  The player's
+        /// choice is drawn at (x = 5, y = 14) and the computers 
+        /// choice at (x = 50, y = 14)
+        /// FIND THE SINGLE MISTAKE!!!
         /// </summary>
         private static void DrawChoice(Players player)
         {
             string choice;
             int x;
-            int y = 12;
+            int y = 14;
 
             if (player == Players.COMPUTER)
             {
-                x = 50;
+                x = 5;
                 choice = SPS_Game.ComputerChoice;
             }
             else
@@ -136,8 +138,8 @@ namespace CO453ClassConsoleApp.SPS
         {
             Console.WriteLine("\tThe current winner is the " + SPS_Game.Winner);
             Console.WriteLine();
-            Console.WriteLine("\tThe player has won " + SPS_Game.PlayerScore + " times");
-            Console.WriteLine("\tThe computer has won " + SPS_Game.ComputerScore + " times");
+            Console.WriteLine("\tThe player has won ");
+            Console.WriteLine("\tThe computer has won ");
         }
 
 
@@ -153,8 +155,8 @@ namespace CO453ClassConsoleApp.SPS
             Console.SetWindowSize(100, 36);
             Console.SetBufferSize(100, 36);
 
-            Console.BackgroundColor = ConsoleColor.DarkBlue;
-            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.BackgroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.White;
 
             Console.Clear();  // clear screen in chosen colour
         }
@@ -168,7 +170,6 @@ namespace CO453ClassConsoleApp.SPS
         {
             SimpleIO.WriteTitle(Title, "Week 3");
             SPS_Game.Start();
-            playerName = SimpleIO.GetString("Please enter your name > ");
         }
     }
 }
