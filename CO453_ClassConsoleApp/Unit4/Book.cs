@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CO453_ClassConsoleApp.Unit4
+namespace CO453ClassConsoleApp.Unit4
 {
     /// <summary>
     /// This class ...
@@ -16,11 +16,23 @@ namespace CO453_ClassConsoleApp.Unit4
 
         private string author, name, town;
         private string animal, weapon, job;
+        private string gender, attack, body;
 
+        /// <summary>
+        /// This method will initialise all the elements of the story
+        /// to default values
+        /// </summary>
         public Book()
         {
             author = SimpleIO.AUTHOR;
             name = "Veena";
+            town = "Leicester";
+            animal = "pigs";
+            weapon = "candlestick";
+            job = "actress";
+            gender = "she";
+            attack = "hit";
+            body = "shoulder";
         }
 
         /// <summary>
@@ -47,6 +59,9 @@ namespace CO453_ClassConsoleApp.Unit4
             animal = GetString("Now a type of animal : ");
             job = GetString("Now a type of job : ");
             weapon = GetString("And your weapon of choice : ");
+            gender = GetString("What gender is your friend (he/she): ");
+            attack = GetString("What form of attack: ");
+            body = GetString("What part of the body was attacked: ");
         }
 
         /// <summary>
@@ -56,16 +71,32 @@ namespace CO453_ClassConsoleApp.Unit4
         public void WriteChapter1()
         {
             Console.Clear();
+            SimpleIO.WriteTitle("Horror Story", "4.2");
 
-            Console.WriteLine("A Horror Story : by " + author);
-            Console.WriteLine("===============================");
-            
             Console.WriteLine("It was a dark night in " + town + " and " + name
                 + " could hear " + animal + "s screaming in the distance.");
             
             Console.WriteLine(name + " staggered terrified through the streets of " 
-                + town + ", realising he had been followed.");
+                + town + ", realising " + gender + " had been followed.");
             
+            Console.WriteLine("In the shadow of a doorway, a demented " + job
+                + " waited, clutching a menacing " + weapon);
+        }
+        /// <summary>
+        /// This method creates a the second chapter of a story using 
+        /// all the attributes of the class
+        /// </summary>
+        public void WriteChapter2()
+        {
+            Console.WriteLine();
+            Console.WriteLine();
+
+            Console.WriteLine("It was a dark night in " + town + " and " + name
+                + " could hear " + animal + "s screaming in the distance.");
+
+            Console.WriteLine(name + " staggered terrified through the streets of "
+                + town + ", realising he had been followed.");
+
             Console.WriteLine("In the shadow of a doorway, a demented " + job
                 + " waited, clutching a menacing " + weapon);
         }

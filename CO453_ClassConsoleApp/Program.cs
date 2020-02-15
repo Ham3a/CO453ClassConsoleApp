@@ -1,8 +1,11 @@
 ﻿using CO453_ClassConsoleApp.Unit4;
 using CO453_ClassConsoleApp.Unit5;
+using CO453ClassConsoleApp.SPS;
+using CO453ClassConsoleApp.Unit4;
+using CO453ClassConsoleApp.Unit5;
 using System;
 
-namespace CO453_ClassConsoleApp
+namespace CO453ClassConsoleApp
 {
     /// <summary>
     /// This class create objects for each of the tasks as
@@ -25,6 +28,12 @@ namespace CO453_ClassConsoleApp
             //TestTournament();           // T5.1 and 5.3
             //TestSongs();                // T5.2
             //TestMotelBooking();         // T5.6
+            TestSPS_Game();
+        }
+
+        private static void TestSPS_Game()
+        {
+            GameController.RunGame();
         }
 
         /// <summary>
@@ -95,8 +104,9 @@ namespace CO453_ClassConsoleApp
 
             SimpleIO.WriteTitle("Horror Storey", "Task 4.1");
 
-            book.GetDetails();
+            //book.GetDetails();
             book.WriteChapter1();
+            book.WriteChapter2();
         }
 
         /// <summary>
@@ -112,18 +122,39 @@ namespace CO453_ClassConsoleApp
 
             DistanceConverter converter = new DistanceConverter();
 
-            miles = converter.GetDouble("Miles");
-            feet = converter.ToFeet(miles);
+            int choice = 3;
 
-            Console.WriteLine("The no of Miles = " + miles);
-            Console.WriteLine("The no of feet = " + feet);
+            string[] choices = new string[]
+            {
+                "1. Convert Miles to Feet",
+                "2. Convert Feet to Miles",
+                "3. Quit Test"
+            };
 
-            feet = converter.GetDouble("Feet");
-            miles = converter.ToMiles(feet);
+            do
+            {
+                choice = SimpleIO.GetChoice(choices);
 
-            Console.WriteLine("The no of feet = " + feet);
-            Console.WriteLine("The no of miles = " + miles);
+                if (choice == 1)
+                {
+                    miles = converter.GetDouble("Miles");
+                    feet = converter.ToFeet(miles);
 
+                    Console.WriteLine("The no of miles = " + miles);
+                    Console.WriteLine("The no of feet  = " + feet);
+                }
+                else if (choice == 2)
+                {
+                    feet = converter.GetDouble("Feet");
+                    miles = converter.ToMiles(feet);
+
+                    Console.WriteLine("The no of feet  = " + feet);
+                    Console.WriteLine("The no of miles = " + miles);
+                }
+
+
+            } while (choice != 3);
+                
         }
 
     }
