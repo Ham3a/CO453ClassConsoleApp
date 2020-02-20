@@ -25,8 +25,8 @@ namespace CO453ClassConsoleApp
         {
             //TestDistanceConverter();    // T4.1
             //TestBook();                 // T4.2 and T4.3
-            TestTournament();           // T5.1 and 5.3
-            //TestSongs();                // T5.2
+            //TestTournament();           // T5.1 and 5.3
+            TestSongs();                // T5.2
             //TestMotelBooking();         // T5.6
             //TestSPS_Game();
         }
@@ -77,7 +77,16 @@ namespace CO453ClassConsoleApp
             MP3Chart chart = new MP3Chart();
 
             chart.ShowSongs();
-            chart.GetVotes();
+
+            bool finish = false;
+
+            while (!finish)
+            {
+                int songNo = chart.GetVotes();
+                if (songNo == 0) finish = true;
+
+            }
+
             chart.ShowVotes();
         }
 
@@ -90,9 +99,9 @@ namespace CO453ClassConsoleApp
         {
             Tournament tournament = new Tournament();
 
-            tournament.GetScores();
+            tournament.GetDetails();
 
-            tournament.ShowScores();
+            tournament.ShowDetails();
         }
 
 
