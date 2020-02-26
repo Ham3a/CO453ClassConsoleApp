@@ -11,9 +11,10 @@ namespace CO453ClassConsoleApp.SPS
 
     public enum RPS_Choices
     {
+        UNKOWN,
         ROCK,
         PAPER,
-        SCISSORS
+        SCISSORS,
     }
 
     /// <summary>
@@ -24,24 +25,20 @@ namespace CO453ClassConsoleApp.SPS
     /// </summary>
     public class RPS_Game
     {
-        public const string ROCK = "ROCK";
-        public const string PAPER = "PAPER";
-        public const string SCISSORS = "SCISSORS";
-
-        public const string UNKOWN = "UNKNOWN";
-
         public string PlayerName { get; set; }
         public string ComputerName { get; set; }
-        public string ComputerChoice { get; set; }
-        public string PlayerChoice { get; set; }
-        public string Winner { get; set; }
+        public string WinnerName { get; set; }
+
+        public RPS_Choices ComputerChoice { get; set; }
+        public RPS_Choices PlayerChoice { get; set; }
 
         private Random randomGenerator = new Random();
 
-         public void Start()
+         public void Start(string player)
         {
-            PlayerName = "Derek";
+            PlayerName = player;
             ComputerName = "Computer";
+            WinnerName = "Unkown";
         }
 
         /// <summary>
@@ -51,7 +48,6 @@ namespace CO453ClassConsoleApp.SPS
         /// </summary>
         public void End()
         {
-             Winner = "No Winner";
         }
 
         /// <summary>
@@ -66,11 +62,11 @@ namespace CO453ClassConsoleApp.SPS
 
             if (choice == 0)
             {
-                ComputerChoice = SCISSORS;
+                ComputerChoice = RPS_Choices.SCISSORS;
             }
             else 
             {
-                ComputerChoice = UNKOWN;
+                ComputerChoice = RPS_Choices.UNKOWN;
             }
         }
 
@@ -84,11 +80,11 @@ namespace CO453ClassConsoleApp.SPS
         {
             if (PlayerChoice == ComputerChoice)
             {
-                Winner = "You have Drawn!!!";
+                WinnerName = "You have Drawn!!!";
             }
             else
             {
-                Winner = "Not Yet Determined!!!";
+                WinnerName = "Not Yet Determined!!!";
             }
 
         }

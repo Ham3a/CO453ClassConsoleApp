@@ -119,7 +119,7 @@ namespace CO453ClassConsoleApp
 
         /// <summary>
         /// This method displays a menu of choices and the user
-        /// can select one by entering a valid number 
+        /// can select one by entering a valid number starting at 1
         /// </summary>
         public static int GetChoice(string[] choices)
         {

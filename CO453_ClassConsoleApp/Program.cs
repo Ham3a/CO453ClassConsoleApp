@@ -26,9 +26,10 @@ namespace CO453ClassConsoleApp
             //TestDistanceConverter();    // T4.1
             //TestBook();                 // T4.2 and T4.3
             //TestTournament();           // T5.1 and 5.3
-            TestSongs();                // T5.2
+            //TestSongs();                // T5.2
             //TestMotelBooking();         // T5.6
-            //TestSPS_Game();
+            
+            TestSPS_Game();
         }
 
         private static void TestSPS_Game()

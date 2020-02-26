@@ -9,12 +9,14 @@ namespace CO453ClassConsoleApp.SPS
     public class GameController
     {
         public static string Title = "Scissors-Paper-Stone Game";
+        
+        public const string ROCK = "ROCK";
+        public const string PAPER = "PAPER";
+        public const string SCISSORS = "SCISSORS";
 
         public const int MAXN_TURNS = 3;
 
         private RPS_Game game = new RPS_Game();
-
-        private string playerName = "Derek";
 
         private int turn;
 
@@ -39,6 +41,7 @@ namespace CO453ClassConsoleApp.SPS
             }
 
             game.End();
+
             EndGame();
         }
 
@@ -50,7 +53,7 @@ namespace CO453ClassConsoleApp.SPS
             Console.Clear();
             SimpleIO.WriteTitle(Title, "Week 3");
 
-            Console.WriteLine("The overall winner is " + game.Winner);
+            Console.WriteLine("The overall winner is " + game.WinnerName);
         }
 
         /// <summary>
@@ -67,13 +70,23 @@ namespace CO453ClassConsoleApp.SPS
 
             string[] choices = new string [] 
             { 
-                RPS_Game.SCISSORS, 
-                RPS_Game.PAPER, 
-                RPS_Game.ROCK 
+                ROCK, 
+                PAPER, 
+                SCISSORS 
             };
 
             int choiceNo = SimpleIO.GetChoice(choices);
-            game.PlayerChoice = choices[choiceNo - 1];
+            
+            if(choiceNo == 1)
+            {
+                game.PlayerChoice = RPS_Choices.ROCK;
+            }
+            else if(choiceNo == 2)
+            {
+                game.PlayerChoice = RPS_Choices.PAPER;
+
+            }
+            else game.PlayerChoice = RPS_Choices.SCISSORS;
 
             Console.WriteLine();
         }
@@ -87,7 +100,8 @@ namespace CO453ClassConsoleApp.SPS
         /// </summary>
         private void DrawChoice(RPS_Players player)
         {
-            string choice;
+            RPS_Choices choice;
+
             int x;
             int y = 14;
 
@@ -102,15 +116,15 @@ namespace CO453ClassConsoleApp.SPS
                 x = 5;
             }
 
-            if (choice == RPS_Game.SCISSORS)
+            if (choice == RPS_Choices.SCISSORS)
             {
                 Images.DrawScissors(x, y);
             }
-            else if (choice == RPS_Game.PAPER)
+            else if (choice == RPS_Choices.PAPER)
             {
                 Images.DrawPaper(x, y);
             }
-            else if (choice == RPS_Game.ROCK)
+            else if (choice == RPS_Choices.ROCK)
             {
                 Images.DrawStone(x, y);
             }
@@ -138,7 +152,7 @@ namespace CO453ClassConsoleApp.SPS
         /// </summary>
         private void ShowResult()
         {
-            Console.WriteLine("\tThe current winner is the " + game.Winner);
+            Console.WriteLine("\tThe current winner is the " + game.WinnerName);
             Console.WriteLine();
             Console.WriteLine("\tThe player has won ");
             Console.WriteLine("\tThe computer has won ");
@@ -171,7 +185,7 @@ namespace CO453ClassConsoleApp.SPS
         private void StartGame()
         {
             SimpleIO.WriteTitle(Title, "Week 3");
-            game.Start();
+            game.Start("Derek");
         }
     }
 }
