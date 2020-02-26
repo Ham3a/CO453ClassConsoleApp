@@ -25,8 +25,10 @@ namespace CO453ClassConsoleApp.SPS
     /// </summary>
     public class RPS_Game
     {
+        public const string COMPUTER_NAME = "Computer";
+
         public string PlayerName { get; set; }
-        public string ComputerName { get; set; }
+        //public string ComputerName { get; set; }
         public string WinnerName { get; set; }
 
         public RPS_Choices ComputerChoice { get; set; }
@@ -37,7 +39,6 @@ namespace CO453ClassConsoleApp.SPS
          public void Start(string player)
         {
             PlayerName = player;
-            ComputerName = "Computer";
             WinnerName = "Unkown";
         }
 
