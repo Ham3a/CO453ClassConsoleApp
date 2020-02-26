@@ -33,7 +33,8 @@ namespace CO453ClassConsoleApp
 
         private static void TestSPS_Game()
         {
-            GameController.RunGame();
+            GameController controller = new GameController();
+            controller.RunGame();
         }
 
         /// <summary>
