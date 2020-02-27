@@ -29,10 +29,10 @@ namespace CO453ClassConsoleApp
             //TestSongs();                // T5.2
             //TestMotelBooking();         // T5.6
             
-            TestSPS_Game();
+            TestRPS_Game();
         }
 
-        private static void TestSPS_Game()
+        private static void TestRPS_Game()
         {
             GameController controller = new GameController();
             controller.RunGame();

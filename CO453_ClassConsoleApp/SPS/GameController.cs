@@ -3,12 +3,12 @@
 namespace CO453ClassConsoleApp.SPS
 {
     /// <summary>
-    /// Thuis class will handle the input and output
+    /// This class will handle the input and output
     /// of the SPS Game
     /// </summary>
     public class GameController
     {
-        public static string Title = "Scissors-Paper-Stone Game";
+        public static string Title = "Scissors-Paper-Rock Game";
         
         public const string ROCK = "ROCK";
         public const string PAPER = "PAPER";
@@ -171,8 +171,8 @@ namespace CO453ClassConsoleApp.SPS
             Console.SetWindowSize(100, 36);
             Console.SetBufferSize(100, 36);
 
-            Console.BackgroundColor = ConsoleColor.Red;
-            Console.ForegroundColor = ConsoleColor.White;
+            Console.BackgroundColor = ConsoleColor.DarkMagenta;
+            Console.ForegroundColor = ConsoleColor.Yellow;
 
             Console.Clear();  // clear screen in chosen colour
         }
