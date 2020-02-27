@@ -27,8 +27,11 @@ namespace CO453ClassConsoleApp.SPS
     {
         public const string COMPUTER_NAME = "Computer";
 
+        public int ComputerScore { get; set; }
+
+        public int PlayerScore { get; set; }
+
         public string PlayerName { get; set; }
-        //public string ComputerName { get; set; }
         public string WinnerName { get; set; }
 
         public RPS_Choices ComputerChoice { get; set; }
@@ -40,6 +43,10 @@ namespace CO453ClassConsoleApp.SPS
         {
             PlayerName = player;
             WinnerName = "Unkown";
+
+            PlayerScore = 0;
+            ComputerScore = 0;
+
         }
 
         /// <summary>
@@ -84,36 +91,48 @@ namespace CO453ClassConsoleApp.SPS
             if (PlayerChoice == ComputerChoice)
             {
                 WinnerName = "You have Drawn!!!";
+                ComputerScore++;
+                PlayerScore++;
             }
             else if(PlayerChoice == RPS_Choices.ROCK && 
                    ComputerChoice == RPS_Choices.SCISSORS)
             {
                 WinnerName = PlayerName;
+                PlayerScore = PlayerScore + 2;
             }
             else if (PlayerChoice == RPS_Choices.PAPER &&
                     ComputerChoice == RPS_Choices.ROCK)
             {
                 WinnerName = PlayerName;
+                PlayerScore = PlayerScore + 2;
+
             }
             else if (PlayerChoice == RPS_Choices.SCISSORS &&
                     ComputerChoice == RPS_Choices.PAPER)
             {
                 WinnerName = PlayerName;
+                PlayerScore = PlayerScore + 2;
+
             }
             else if (PlayerChoice == RPS_Choices.ROCK &&
                      ComputerChoice == RPS_Choices.PAPER)
             {
                 WinnerName = COMPUTER_NAME;
+                ComputerScore = ComputerScore + 2;
             }
             else if (PlayerChoice == RPS_Choices.PAPER &&
                      ComputerChoice == RPS_Choices.SCISSORS)
             {
                 WinnerName = COMPUTER_NAME;
+                ComputerScore = ComputerScore + 2;
+
             }
             else if (PlayerChoice == RPS_Choices.SCISSORS &&
                     ComputerChoice == RPS_Choices.ROCK)
             {
                 WinnerName = COMPUTER_NAME;
+                ComputerScore = ComputerScore + 2;
+
             }
 
         }

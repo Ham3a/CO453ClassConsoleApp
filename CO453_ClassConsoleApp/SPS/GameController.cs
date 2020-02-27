@@ -28,7 +28,8 @@ namespace CO453ClassConsoleApp.SPS
             for(turn = 1; turn <= MAXN_TURNS; turn++)
             {
                 GetPlayerChoice();
-                game.GetComputerChoice();
+                //game.GetComputerChoice();
+                game.ComputerChoice = RPS_Choices.ROCK;
 
                 ShowChoices();
 
@@ -107,7 +108,7 @@ namespace CO453ClassConsoleApp.SPS
 
             if (player == RPS_Players.COMPUTER)
             {
-                x = 5;
+                x = 55;
                 choice = game.ComputerChoice;
             }
             else
@@ -152,6 +153,9 @@ namespace CO453ClassConsoleApp.SPS
         /// </summary>
         private void ShowResult()
         {
+            Console.WriteLine("\tThe Players score = " + game.PlayerScore);
+            Console.WriteLine("\tThe Computer score = " + game.ComputerScore);
+
             Console.WriteLine("\tThe current winner is the " + game.WinnerName);
             Console.WriteLine();
             Console.WriteLine("\tThe player has won ");
