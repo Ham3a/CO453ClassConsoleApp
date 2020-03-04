@@ -10,7 +10,6 @@ namespace CO453ClassConsoleApp.Unit5
     /// scores for an array of players (names)
     /// 
     /// Derek Peacock
-    /// Modified by: Hamza Basharat
     /// </summary>
     public class Tournament
     {
